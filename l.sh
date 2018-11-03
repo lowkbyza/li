@@ -173,7 +173,7 @@ chmod 755 /home/vps/public_html/wallet/check.php
 chmod 755 /home/vps/public_html/wallet/user.php
 chmod 755 /home/vps/public_html/wallet/config.php
 chmod 755 /home/vps/public_html/wallet/index.php
-
+chmod 777 /home/vps/public_html/application/views/panel/smile.php
 
 clear
 echo ""
