@@ -143,7 +143,7 @@ cd /home/vps/public_html
 
 #wget https://github.com/rasta-team/Full-OCS/raw/master/panelocs.zip
 wget https://github.com/lowkbyza/li/blob/master/panel.zip
-mv panel.zip.zip LTEOCS.zip
+mv panel.zip LTEOCS.zip
 
 unzip LTEOCS.zip
 
@@ -212,7 +212,7 @@ sleep 5
 echo "กรุณาตั้งค่า ระบบเติมเงิน หมายเลขอ้างอิงวอลเลต"
 
 sleep 5
-nano /home/vps/public_html/wallet/wallet.php
+nano /home/vps/public_html/application/config/database.php
 
 # info
 clear
