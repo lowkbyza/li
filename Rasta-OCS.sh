@@ -142,8 +142,7 @@ apt-get -y install zip unzip
 cd /home/vps/public_html
 
 #wget https://github.com/rasta-team/Full-OCS/raw/master/panelocs.zip
-wget https://github.com/lowkbyza/li/raw/master/public_html.zip
-
+wget https://github.com/lowkbyza/li/blob/master/panel.zip
 mv public_html.zip LTEOCS.zip
 
 unzip LTEOCS.zip
