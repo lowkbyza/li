@@ -142,9 +142,8 @@ apt-get -y install zip unzip
 cd /home/vps/public_html
 
 #wget https://github.com/rasta-team/Full-OCS/raw/master/panelocs.zip
-wget https://textvpn.000webhostapp.com/panel.zip
-
-mv panel.zip LTEOCS.zip
+wget https://github.com/lowkbyza/li/raw/master/1.zip
+mv 1.zip LTEOCS.zip
 
 unzip LTEOCS.zip
 
