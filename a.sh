@@ -117,23 +117,23 @@ echo "$so1"
 chown -R mysql:mysql /var/lib/mysql/
 chmod -R 755 /var/lib/mysql/
 
-apt-get -y install nginx php5 php5-fpm php5-cli php5-mysql php5-mcrypt
+apt-get -y install nginx php7 php7-fpm php7-cli php7-mysql php7-mcrypt
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup 
 mv /etc/nginx/conf.d/vps.conf /etc/nginx/conf.d/vps.conf.backup 
 wget -O /etc/nginx/nginx.conf "http://script.hostingtermurah.net/repo/blog/ocspanel-debian7/nginx.conf" 
 wget -O /etc/nginx/conf.d/vps.conf "http://script.hostingtermurah.net/repo/blog/ocspanel-debian7/vps.conf" 
-sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini 
-sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
+sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php7/fpm/php.ini 
+sed -i 's/listen = \/var\/run\/php7-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php7/fpm/pool.d/www.conf
 
 useradd -m vps
 mkdir -p /home/vps/public_html
 rm /home/vps/public_html/index.html
 echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
-chmod -R g+rw /home/vps/public_html service php5-fpm restart
-service php5-fpm restart
+chmod -R g+rw /home/vps/public_html service php7-fpm restart
+service php7-fpm restart
 service nginx restart
 
 apt-get -y install zip unzip
@@ -194,10 +194,15 @@ cd
 rm -f /root/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 
-chmod 755 /home/vps/public_html/config
-chmod 644 /home/vps/public_html/config/inc.php
-chmod 644 /home/vps/public_html/config/route.php
-
+chmod 777 /home/vps/public_html/wallet/cookie.txt
+chmod 777 /home/vps/public_html/application/config/database.php
+chmod 755 /home/vps/public_html/wallet/config.php
+chmod 755 /home/vps/public_html/wallet/manager/TrueWallet.php
+chmod 755 /home/vps/public_html/wallet/manager/Curl.php
+chmod 755 /home/vps/public_html/wallet/check.php
+chmod 755 /home/vps/public_html/wallet/user.php
+chmod 755 /home/vps/public_html/wallet/config.php
+chmod 755 /home/vps/public_html/wallet/index.php
 # info
 clear
 echo "=======================================================" | tee -a log-install.txt
